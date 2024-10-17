@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20/10, An Nguyên!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #message {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            width: 80%;
+            text-align: center;
+            color: #333;
+            min-height: 60px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 1.2em;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy 20/10, An Nguyên!</h1>
+    <div id="message"></div>
+    <button id="giftButton" style="display: none;" onclick="alert('Quà của tao đó Nguyên! 🎁. Mong fen không chê nha')">Receive Your Gift</button>
+
+    <script>
+        const message = "CHÚC  20/10 VUI VẺ NHA CON LONNNNN ƠIIIIIII";
+        let index = 0;
+        const speed = 50;
+
+        function typeMessage() {
+            if (index < message.length) {
+                document.getElementById("message").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeMessage, speed);
+            } else {
+                document.getElementById("giftButton").style.display = "block";
+            }
+        }
+
+        window.onload = typeMessage;
+    </script>
+
+</body>
+</html>
